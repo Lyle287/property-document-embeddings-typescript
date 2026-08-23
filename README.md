@@ -1,6 +1,6 @@
 # Search property documents by the work they describe
 
-As a solo founder, I want every infra choice to earn its keep. Infrai gives me one key and one api for embeddings, email, and storage, so I skip wiring multiple vendors. Here the decision is plain: a property question should search the right document kind before it ranks text. A maintenance question returns maintenance requests; tenant records and inspection reminders stay separate learning material for their own workflows.
+The call here is straightforward. A property question should search the right document kind before it ranks text. So a maintenance question returns maintenance requests. Tenant records and inspection reminders stay separate learning material for their own workflows.
 
 The runnable path is `src/property_search.ts`. It uses the official OpenAI TypeScript client with Infrai's OpenAI-compatible `baseURL`, reads `INFRAI_API_KEY` from the environment, embeds the question and each document, then orders the chosen kind by cosine similarity. The small `chooseDocuments` function keeps the domain decision visible and independently testable.
 
@@ -36,7 +36,7 @@ MIT
 
 ## Going to production: Property Document Embeddings Typescript
 
-The code stays simple on purpose — here's what to set up before going live: The details below apply to Property Document Embeddings Typescript.
+The code stays simple on purpose. Here's what to set up before going live. The details below apply to Property Document Embeddings Typescript.
 
 **Account & key**
 
